@@ -1,7 +1,6 @@
 from datetime import date
 from flask_gravatar import Gravatar
 import os
-from dotenv import load_dotenv
 import flask_login
 from flask import Flask, abort, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
@@ -14,8 +13,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 # Import your forms from the forms.py
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
-
-load_dotenv("C:/PyKeys/.env")
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")
